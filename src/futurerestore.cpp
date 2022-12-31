@@ -1348,7 +1348,8 @@ void futurerestore::doRestore(const char *ipsw) {
     } else if (!_rerestoreiOS9) {
 
         /* now we load the iBEC */
-        retassure(!recovery_send_ibec(client, build_identity), "ERROR: Unable to send iBEC\n");
+        info("SKIPPING by miticolollo");
+        /*retassure(!recovery_send_ibec(client, build_identity), "ERROR: Unable to send iBEC\n");
 
         debug("waiting for device to reconnect...\n");
         recovery_client_free(client);
@@ -1375,7 +1376,7 @@ void futurerestore::doRestore(const char *ipsw) {
         retassure((client->mode == MODE_RECOVERY || (mutex_unlock(&client->device_event_mutex), 0)),
                   "Device did not disconnect. Possibly invalid iBEC. Reset device and try again");    
 #endif    
-        mutex_unlock(&client->device_event_mutex);
+        mutex_unlock(&client->device_event_mutex);*/
     }
 
     retassure(client->mode == MODE_RECOVERY, "failed to reconnect to device in recovery (iBEC) mode\n");

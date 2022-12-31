@@ -879,8 +879,8 @@ void futurerestore::enterPwnRecovery(plist_t build_identity, std::string bootarg
         if (_setNonce) {
             info("Done setting nonce!\n");
             info("Use futurerestore --exit-recovery to go back to normal mode if you aren't restoring.\n");
-            setAutoboot(false);
-            recovery_send_reset(_client);
+            /*setAutoboot(false);
+            recovery_send_reset(_client);*/
             recovery_client_free(_client);
             exit(0);
         }
@@ -1348,7 +1348,7 @@ void futurerestore::doRestore(const char *ipsw) {
     } else if (!_rerestoreiOS9) {
 
         /* now we load the iBEC */
-        info("SKIPPING by miticolollo");
+        info("SKIPPING by miticolollo\n");
         /*retassure(!recovery_send_ibec(client, build_identity), "ERROR: Unable to send iBEC\n");
 
         debug("waiting for device to reconnect...\n");
